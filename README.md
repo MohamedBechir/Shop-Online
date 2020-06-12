@@ -1,27 +1,55 @@
-# Meantest
+# Shop-Online
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors)
 
-## Development server
+Shop-Online is an e-commerce web platform that allows you as a customer to buy and sell your books. On the other hand, as a delivery man it provides you per day deliveries and the shortes path to mimimize the costs of the travelling(thanks to the Travelling Salesman Problem).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Features as a customer:
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Add a book
 
-## Build
+- It allows customers to add their books to our catalogue
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+![main table](https://i.imgur.com/hp9BKjk.png)
 
-## Running unit tests
+### List of books
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- It displays the list of books to the customer
 
-## Running end-to-end tests
+![main table](https://i.imgur.com/NlqksmK.png)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+### Edit or delete book
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- It allows you as a customer to delete their books but not those of others
+
+![main table](https://i.imgur.com/1tc3GcW.png)
+
+### Add books to cart
+
+- It allows you as a customer to add others' books to your cart
+
+![main table](https://i.imgur.com/ZPpKVga.png)
+
+### Make an order
+
+- It allows you as a customer to pass an order
+
+![main table](https://i.imgur.com/FjYAfx8.png)
+
+## Features as a delivery man
+
+### List of deliveries
+
+- It displays to the delivery man the list of deliveries per day.
+
+### Shortest path
+
+- It provides to you as a delivery man the shortest path display on Google Maps
+
+![main table](https://i.imgur.com/cGO19mY.png)
+
+# Disclaimer
+
+This project is NOT by any means complete or stable. Lots of bugs and anti-patterns exists. It can be further developed and refactored.
