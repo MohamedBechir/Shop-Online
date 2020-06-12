@@ -1,0 +1,74 @@
+<app-header *ngIf="!userIsDelivery"></app-header>
+<app-header-deliver *ngIf="userIsDelivery"></app-header-deliver>
+<!-- <mat-card>
+  <form>
+    <mat-form-field>
+    <h1>Name: {{name}}</h1>
+  </mat-form-field>
+
+  <mat-form-field>
+    <h1>your id </h1>
+    <p>{{bla}}</p>
+    <h1>your role </h1>
+    <p>{{role}}</p>
+  </mat-form-field>
+</form>
+  </mat-card> -->
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <div>
+      <form>
+          <div class="row">
+              <div class="col-md-3">
+                  <div class="profile-img">
+                      <img src="https://st2.depositphotos.com/1006318/5909/v/950/depositphotos_59095529-stock-illustration-profile-icon-male-avatar.jpg" alt=""/>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-4">
+              </div>
+              <div class="col-md-8">
+                  <div class="tab-content profile-tab" id="myTabContent">
+                      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <label>User Id</label>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <p>{{bla}}</p>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <label>Name</label>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <p>{{name}}</p>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <label>Email</label>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <p>{{email}}</p>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <label>Role</label>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <p>{{role}}</p>
+                                      </div>
+                                  </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </form>
+  </div>

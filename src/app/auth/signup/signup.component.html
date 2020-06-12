@@ -1,0 +1,78 @@
+<div class="row h-100 justify-content-center align-items-center">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"
+  class= "main-form shadow-lg p-3 mb-5 bg-white rounded" novalidate>
+    <div class="row">
+      <div class="col text-center">
+        <img src="../../../assets/img/logo.png" alt="">
+      </div>
+    </div>
+    <div class="form-group">
+      <div *ngIf="this.errMsg">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <h4 class="alert-heading">Oops.. !</h4>
+          {{this.errMsg}}
+        </div>
+      </div>
+     </div>
+     <div class="form-group">
+      <label for="name">name</label>
+      <input
+      class="form-control rounded-lg border border-dark"
+      formControlName="name" type="text" name="name" id="name"
+        [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+        <div *ngIf="f.name.errors.required">Name is required</div>
+        <div *ngIf="f.name.errors.pattern">Name should contain characters and spaces only
+        </div>
+        <div *ngIf="f.name.errors.minlength">Name should contain at least 2 characters
+        </div>
+        <div *ngIf="f.name.errors.maxlength">Name should not exceed 255 characters</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input
+        class="form-control rounded-lg border border-dark"
+        formControlName="email" type="text" name="email" id="email"
+        [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+        class="form-control rounded-lg border border-dark"
+        formControlName="password" type="password" name="password" id="password"
+        [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+      </div>
+
+    <!-- <div class="form-group">
+      <select class="custom-select custom-select-md border border-dark">
+        <option selected>Choose a role</option>
+        <option value="customer">Customer</option>
+        <option value="delivery">Delivery</option>
+      </select>
+    </div> -->
+
+    <div class="form-group">
+      <label for="role">Role</label> <br>
+      <select name="role" formControlName="role" ngModel matInput placeholder="select a role" required>
+        <option value="delivery">Delivery man</option>
+        <option value="customer">Customer</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col text-center">
+          <button type="submit" class="btn btn-dark">SignUp</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

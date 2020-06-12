@@ -1,0 +1,32 @@
+  <div class="row h-100 justify-content-center align-items-center">
+    <form (submit)="onLogin(loginForm)" #loginForm="ngForm"
+      class= "main-form shadow-lg p-3 mb-5 bg-white rounded" novalidate>
+      <div class="row">
+        <div class="col text-center">
+          <img src="../../../assets/img/logo.png" alt="">
+        </div>
+      </div>
+      <div class="form-group">
+        <input 
+          class="form-control rounded-lg border border-dark" 
+          name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
+      </div>
+      <div class="form-group">
+        <input 
+          class="form-control rounded-lg border border-dark" 
+          type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required> 
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col text-center">
+            <button type="submit" class="btn btn-dark">Login</button>
+          </div>
+        </div>
+      </div>
+      <div class="hyperLinks">
+            <div><a class="text-dark"  routerLink = "/signup">Create an account?</a></div>
+            <div><a class="text-dark" routerLink = "/enter-email">Forgot password?</a></div>
+      </div>
+    </form>
+  </div>
+  

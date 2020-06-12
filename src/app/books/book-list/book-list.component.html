@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success!</strong> The book has been added to cart!
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-accordion multi="true" *ngIf="books.length > 0 && !isLoading">
+<div class="card-deck">
+  <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;" *ngFor="let book of books">
+    <!-- <mat-action-row *ngIf="userIsAuthenticated && userId == book.creator"> -->
+    <button [disabled] = "!userIsAuthenticated || userId != book.creator "mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  <!-- </mat-action-row> -->
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-action-row >
+          <button mat-button color="warn" (click)="onDelete(book.id)">DELETE</button>
+        </mat-action-row>
+      </button>
+      <button mat-menu-item>
+        <mat-action-row >
+          <a mat-button color="primary" [routerLink]="['/editbook', book.id]">EDIT</a>
+        </mat-action-row>
+      </button>
+    </mat-menu>
+    <img [src]="book.imagePath" [alt]="book.title" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title"> Title: {{ book.title }}</h5>
+      <p class="card-text"> Price: {{ book.price }}</p>
+      <p class="card-text"> Description: {{ book.content }}</p>
+      <a (click)="onAddToCart(book.id)" class="btn  btn-outline-light my-2 my-sm-0" >Add to cart</a>
+    </div>
+  </div>
+</div>
+</mat-accordion>
+
+<p class="info-text mat-body-1" *ngIf="books.length <= 0 && !isLoading">No books are added yet</p>
+<mat-paginator [length]="totalBooks" [pageSize]="booksPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"
+*ngIf="books.length > 0" ></mat-paginator>

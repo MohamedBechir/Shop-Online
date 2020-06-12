@@ -1,0 +1,63 @@
+<app-header></app-header>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success!</strong> The cart has been updated!
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+    <div class=" text pt-5 pl-5"><h1 style="font-size: 40px;">Your cart :</h1>
+    </div>
+    <div class="table-responsive pt-2 pr-5 pl-5">
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col" class="texting" style="width: 50%;">Book Title</th>
+            <!-- <th scope="col" class="texting" style="width: 8%;">Book Image</th> -->
+            <th scope="col" class="texting" style="width: 50%;">Book Price</th>
+          </tr>
+        </thead>
+          <tr *ngFor="let product of this.cardProducts$">
+            <td class="texting">{{product.title}}</td>
+            <!-- <th scope="row" class="texting">HHHH</th> -->
+            <th scope="row" class="texting">{{product.price}} $</th>
+            <th  *ngIf="isRowVisible == true" scope="row" class="texting">
+              <button (click)="onDelete(product._id)" mat-icon-button color="warn" class = "removebtn">
+                <mat-icon   *ngIf="isButtonVisible == true">remove_circle_outline</mat-icon>
+              </button>
+            </th> 
+          </tr>
+      </table>
+    </div>
+    <div class="text-center" style="width: 100%;">
+        <button type="button" (click)="onShowDelete()" class="btn btn-dark" style="font-size: large; width: 20%;">Update cart</button>
+    </div>
+    <div class="pt-5 pl-5 pr-5">
+    <hr>
+    </div>
+    <div class="col" style=" padding-right: 200px; padding-top: 100px;">
+        <div class="text-right" style="padding-right: 440px;">
+            <h1 class="text" style="font-size: 40px;">Cart Totals :</h1>
+        </div>
+                <div class="table-responsive float-right" style="width: 35%;">
+                    <table class="table table-bordered">
+                        <tr>
+                          <th class="text-dark bg-light" style="font-size: large; width: 16%;" scope="col">SubTotal
+                          </th>
+                          <td class="texting" style=" width: 16%;" scope="row">{{totalPrice}}$</td>
+                        </tr>
+                          <tbody>
+                            <tr>
+                                <th class="text-dark bg-light" style="font-size: large; width: 16%;" scope="col">
+                                Total</th>
+                                <td class="texting" style=" width: 16%;" scope="row">{{totalPrice}}$</td>
+                              </tr>
+                          </tbody>
+                      <tr>
+                    </table>
+                    <div class="checkbtn">
+                      <div class="text-center" style="width: 100%;">
+                        <button type="button" class="btn btn-dark" style="font-size: large; width: 70%;" routerLink= "/order">proceed to checkout</button> <br><br><br>
+                      </div>
+                    </div>
+                  </div>
+            </div>

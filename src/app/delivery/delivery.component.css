@@ -1,0 +1,26 @@
+@font-face {
+    font-family: Lato;
+    src: url(https://fonts.googleapis.com/css?family=Lato&display=swap)
+  }
+body{
+    width: 100%;
+}
+
+.contain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.er{
+    display: flex;
+    flex-direction: column;
+}
+
+agm-map{
+    height: 400px;
+    width: 800px;
+}
+.text{
+    font-size: large;
+}

@@ -1,0 +1,38 @@
+<app-header-deliver></app-header-deliver>
+<div class="contain p-5 ">
+    <div class="map pr-5">
+      <agm-map [latitude]="lat" [zoom]="6" [longitude]="lng">
+          <agm-direction [origin]="origin" [destination]="destination" [waypoints]="waypoints"></agm-direction>
+        </agm-map>
+  </div>
+  <div>
+    <ngb-datepicker class="pl-5" #dp [(ngModel)]="model" (dateSelect)="onDateSelect($event)" (navigate)="date = $event.next"></ngb-datepicker>
+  </div>
+  </div>
+<div class="er pl-5 pr-5">
+  <div><h1 class="pl-5 pr-5">Deliveries List:</h1>
+  </div>
+  <div class="table-responsive pl-5 pr-5">
+    <table class="table table-bordered ">
+      <thead class="thead-dark">
+        <tr>
+          <th class="text" scope="col" style="width: 8%;">Product Name</th>
+          <th class="text" scope="col" style="width: 8%;">Ordered By</th>
+          <th class="text" scope="col" style="width: 8%;">Total Price</th>
+          <th class="text" scope="col" style="width: 8%;">Address</th>
+        </tr>
+      </thead>
+        <tr *ngFor="let delivery of this.deliveriesList$">
+            <td class="text">
+              <ng-container *ngFor="let product of delivery.products ;let i;">
+                - {{product.title}}
+                <br>
+              </ng-container>
+              </td>
+            <td class="text">{{delivery.name}}</td>
+            <td class="text">{{delivery.totalPrice}}$</td>
+            <th class="text" scope="row">{{delivery.address}}</th>
+            </tr>
+    </table>
+  </div>
+</div>

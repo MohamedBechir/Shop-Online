@@ -1,0 +1,113 @@
+<!-- <app-header></app-header>
+<div class="row h-100 justify-content-center align-items-center">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+<form [formGroup]="form" (submit)="onSaveBook()" *ngIf="!isLoading">
+  <mat-form-field>
+    <input
+    matInput
+    type="text"
+    formControlName="title"
+    placeholder="book Title">
+    <mat-error *ngIf="form.get('title').invalid">Please enter a book title!</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+    matInput
+    type="text"
+    formControlName="price"
+    placeholder="book Price">
+    <mat-error *ngIf="form.get('price').invalid">Please enter a book price!</mat-error>
+  </mat-form-field>
+
+  <div>
+    <button mat-stroked-button type="button" (click)="filePicker.click()">Pick Image</button>
+    <input type="file" #filePicker (change)="onImagePicked($event)" >
+  </div>
+  <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+    <img [src]="imagePreview" [alt]="form.value.title">
+  </div>
+  <mat-form-field>
+    <textarea
+    matInput
+    rows="4"
+    formControlName="content"
+    placeholder="Book Content"
+    ></textarea>
+    <mat-error *ngIf="form.get('content').invalid">Please enter a book description!</mat-error>
+  </mat-form-field>
+  <div class="form-group">
+    <div class="row">
+      <div class="col text-center">
+        <button type="submit" class="btn btn-dark">Add Product</button>
+      </div>
+    </div>
+  </div>
+</form>
+</div> -->
+
+  <!-- <button
+  mat-raised-button
+  color="primary"
+  type="submit">Save Book!</button> -->
+
+
+<app-header></app-header>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success!</strong> The book has been added!
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div *ngIf="alertup" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success!</strong> The book has been updated!
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="row h-100 justify-content-center align-items-center">
+  <form [formGroup]="form" (submit)="onSaveBook()"
+    class="h- main-form shadow-sm p-3 mb-5 bg-white rounded" novalidate>
+
+    <div class="form-group">
+      <h2>Title:</h2>
+      <input type="text"
+      formControlName="title"
+      ngModel
+        placeholder="title"
+        class="form-control rounded-lg border border-dark"
+        required>
+    </div>
+    <div class="form-group">
+      <h2>Price:</h2>
+      <input
+      type="text"
+      formControlName="price"
+      ngModel
+      placeholder="price"
+     class="form-control rounded-lg border border-dark" required>
+    </div>
+    <div class="form-group">
+      <button mat-stroked-button type="button" (click)="filePicker.click()">Pick Image</button>
+      <input type="file" #filePicker (change)="onImagePicked($event)" >
+    </div>
+    <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+      <img [src]="imagePreview" [alt]="form.value.title">
+    </div>
+    <div class="form-group">
+      <h2>Description:</h2>
+      <input
+      type="text"
+      formControlName="content"
+      ngModel
+     placeholder="Description"
+     class="form-control rounded-lg border border-dark" required>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col text-center">
+          <button type="submit" class="btn btn-dark">Add Product</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

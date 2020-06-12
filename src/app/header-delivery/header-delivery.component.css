@@ -1,0 +1,28 @@
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+ul{
+  display: flex;
+  font-size: 20px;
+}
+
+span{
+  margin: 1rem;
+}
+
+img{
+  height: 65px;
+  width: 170px;
+}
+
+.nav-link {
+  margin-left: 0cm;
+}
+
+img{
+  height: 65px;
+  width: 170px;
+}
