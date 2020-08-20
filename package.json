@@ -32,7 +32,7 @@
     "@ng-bootstrap/ng-bootstrap": "^6.1.0",
     "agm-direction": "^0.7.9",
     "angular-reverse-geocode": "^1.0.0",
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "geodist": "^0.2.1",
